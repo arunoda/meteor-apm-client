@@ -1,11 +1,17 @@
 
 Meteor.startup(function () {
-  var appId = process.env.KADIRA_APP_ID || Meteor.settings.KADIRA_APP_ID;
-  var secret = process.env.KADIRA_APP_SECRET || Meteor.settings.KADIRA_APP_SECRET;
-  if(appId && secret) {
-    Apm.connect(appId, secret);
+  console.warn('APM: Trying to connect');
+  if(process.env.KADIRA_APP_ID && process.env.KADIRA_APP_SECRET) {
+    console.warn('APM: connected using environment variables');
+    Apm.connect(process.env.KADIRA_APP_ID, process.env.KADIRA_APP_SECRET);
     Apm.connect = function () {
-      throw new Error('APM: Already connecting using environment variables');
+      throw new Error('APM: already connected using environment variables');
     }
-  };
+  } else if(Meteor.settings.KADIRA_APP_ID && Meteor.settings.KADIRA_APP_SECRET) {
+    console.warn('APM: connected using environment variables');
+    Apm.connect(Meteor.settings.KADIRA_APP_ID, Meteor.settings.KADIRA_APP_SECRET);
+    Apm.connect = function () {
+      throw new Error('APM: already connected using Meteor.settings');
+    }
+  }
 });
