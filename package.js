@@ -108,3 +108,9 @@ function configurePackage(api) {
 
   api.add_files(['lib/client/route.js'], 'client')
 }
+
+console.log("---------------------------------------------------------");
+console.log("`apm` package is deprecated!");
+console.log("Please use `kadira` package instead: http://git.io/yoagYw");
+console.log("----------------------------------------------------------");
+
