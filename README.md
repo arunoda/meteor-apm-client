@@ -3,6 +3,8 @@ meteor-apm
 
 ### Deprecated: Please use our new [`kadira`](https://github.com/meteorhacks/kadira) smart package
 
+----
+
 Getting started
 ---------------
 
