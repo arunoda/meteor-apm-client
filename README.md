@@ -1,9 +1,7 @@
 meteor-apm
 ==========
 
-[![Meteor Apm - Application Performance Monitoring for Meteor](https://meteorapm.com/images/meteorapm.png)](https://meteorapm.com)
-
-> Meteor APM is currently on Private Beta, you need to [obtain access](https://meteorapm.com) before proceed
+### Deprecated: Please use our new [`kadira`](https://github.com/meteorhacks/kadira) smart package
 
 Getting started
 ---------------
